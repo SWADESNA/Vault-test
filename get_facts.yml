@@ -1,0 +1,14 @@
+- name: "JUST THE FACTS"
+  hosts: ios
+  connection: local
+  gather_facts: no
+
+  vars_files:
+    - "{{ playbook_dir }}/vars/secrets.yml"
+  tasks:
+    - name: "GET ME MY FACTz"
+      ios_facts:
+      
+    - name: "GIVE ME MY INTERFACEs"
+      debug:
+        msg: "{{ ansible_net_interfaces }}"
